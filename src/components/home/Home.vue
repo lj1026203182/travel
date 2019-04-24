@@ -1,8 +1,15 @@
 <template>
-  <div>主页</div>
+  <div>
+    <!-- 脑壳部分 -->
+    <Homeheader></Homeheader>
+    <!-- 轮播图 -->
+    <Swiper></Swiper>
+  </div>
 </template>
 
 <script>
+import Homeheader from './subcomponents/Header'
+import Swiper from './subcomponents/Swiper';
 export default {
   data () {
     return {
@@ -13,7 +20,8 @@ export default {
 
   },
   components: {
-
+    Homeheader,
+    Swiper
   }
 }
 </script>

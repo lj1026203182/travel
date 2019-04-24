@@ -2,3 +2,6 @@
 2. reset.css 解决不同手机显示效果不同
 3. border.css 解决 1 像素边框问题
 4. 手机端点击 click 事件会有 300ms 延迟, 暗转 cnpm i fastclick --save 解决
+5. 安装 cnpm i stylus stylus-loader -D
+
+一. header

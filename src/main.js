@@ -9,8 +9,19 @@ import fastClick from 'fastclick'
 import './assets/styles/reset.css'
 // 引入1像素边框解决方案的css
 import './assets/styles/border.css'
+import { NavBar, Toast, Icon } from 'vant'
+// 引入iconfont
+import './assets/styles/iconfont.css'
+// 轮播图
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 // 使用fastClick
 fastClick.attach(document.body)
+Vue.use(NavBar)
+  .use(Toast)
+  .use(Icon)
+
+Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
 
