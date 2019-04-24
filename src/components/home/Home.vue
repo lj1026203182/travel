@@ -4,12 +4,15 @@
     <Homeheader></Homeheader>
     <!-- 轮播图 -->
     <Swiper></Swiper>
+    <!-- icons -->
+    <Icons></Icons>
   </div>
 </template>
 
 <script>
 import Homeheader from './subcomponents/Header'
 import Swiper from './subcomponents/Swiper';
+import Icons from './subcomponents/Icons';
 export default {
   data () {
     return {
@@ -21,7 +24,8 @@ export default {
   },
   components: {
     Homeheader,
-    Swiper
+    Swiper,
+    Icons
   }
 }
 </script>
