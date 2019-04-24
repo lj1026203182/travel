@@ -6,6 +6,10 @@
     <Swiper></Swiper>
     <!-- icons -->
     <Icons></Icons>
+    <!-- 推荐部分 -->
+    <Recommend></Recommend>
+    <!-- 周末去哪儿部分 -->
+    <Weekend></Weekend>
   </div>
 </template>
 
@@ -13,6 +17,8 @@
 import Homeheader from './subcomponents/Header'
 import Swiper from './subcomponents/Swiper';
 import Icons from './subcomponents/Icons';
+import Recommend from './subcomponents/Recommend';
+import Weekend from './subcomponents/Weekend';
 export default {
   data () {
     return {
@@ -25,7 +31,9 @@ export default {
   components: {
     Homeheader,
     Swiper,
-    Icons
+    Icons,
+    Recommend,
+    Weekend
   }
 }
 </script>

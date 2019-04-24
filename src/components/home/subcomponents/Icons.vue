@@ -78,6 +78,7 @@ export default {
 @import '../../../assets/styles/mixins.styl';
 
 .icons {
+  margin-top: 0.1rem;
   height: 0;
   padding-bottom: 50%;
   overflow: hidden;

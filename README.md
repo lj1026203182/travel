@@ -5,3 +5,7 @@
 5. 安装 cnpm i stylus stylus-loader -D
 
 一. header
+二.轮播图
+三. 八宫格的轮播效果
+四.首页推荐部分
+五.周末推荐部分
