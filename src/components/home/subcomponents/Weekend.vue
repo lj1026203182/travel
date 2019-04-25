@@ -3,7 +3,7 @@
     <div class="recommend-title">周末去哪儿</div>
     <!-- 内容部分 -->
     <ul class="item">
-      <li v-for="(item, index) in weekList" :key="item.id">
+      <li v-for="(item, index) in list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" alt>
         </div>
@@ -20,23 +20,11 @@
 export default {
   data () {
     return {
-      weekList: [{
-        id: '1',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1812/4c/33ad31d025fef.jpg_r_640x214_7821b813.jpg',
-        title: '重庆夜景大赏',
-        desc: '享巴渝特色，赏两江风光，感受不一样的重庆夜景！'
-      }, {
-        id: '2',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/53/4bcd11cc3a5374.jpg_r_640x214_988a4cee.jpg',
-        title: '重庆必打卡',
-        desc: '重庆，非去不可'
-      }, {
-        id: '3',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/48/f117e9b3bf582a.jpg_r_640x214_b8145711.jpg',
-        title: '重庆大美古镇',
-        desc: '行走重庆最美古镇，让你瞬间穿越千年'
-      }]
+
     }
+  },
+  props: {
+    list: Array
   },
   methods: {
 

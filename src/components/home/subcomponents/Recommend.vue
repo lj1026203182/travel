@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="(item, index) in recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="(item, index) in lists" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl">
         </div>
@@ -21,23 +21,11 @@ export default {
   name: 'HomeRecommed',
   data () {
     return {
-      recommendList: [{
-        id: '1',
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1710/86/862fb9c710b0b18a3.img.jpg_200x200_1d3346d3.jpg",
-        title: '南温泉索滑道',
-        desc: '南温泉公'
-      }, {
-        id: '2',
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1810/36/36ed80c6e147d019a3.img.png_200x200_212fa958.png",
-        title: '重庆两江夜游',
-        desc: '不览夜景，未到重庆'
-      }, {
-        id: '3',
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1805/d1/d104b7ec6826de79a3.img.jpg_200x200_47aed401.jpg",
-        title: '重庆杜莎夫人蜡像馆',
-        desc: '随买随用'
-      }]
+
     }
+  },
+  props: {
+    lists: Array
   },
   methods: {
 
