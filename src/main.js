@@ -15,6 +15,10 @@ import './assets/styles/iconfont.css'
 // 轮播图
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+Vue.use(MintUI)
 // 使用fastClick
 fastClick.attach(document.body)
 Vue.use(NavBar)

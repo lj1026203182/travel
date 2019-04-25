@@ -18,7 +18,7 @@ export default {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true,//让轮播循环
-        autoplay: true
+        // autoplay: true
       }
     }
   },
