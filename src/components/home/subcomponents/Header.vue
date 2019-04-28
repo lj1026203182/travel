@@ -4,7 +4,7 @@
       <van-icon name="arrow-down" slot="right"/>
     </van-nav-bar>
     <input type="text" placeholder="请输入城市/景点/游玩主题" id="input">
-    <router-link to="/city" id="city">城市</router-link>
+    <router-link to="/city" id="city">{{this.$store.state.city}}</router-link>
   </div>
 </template>
 

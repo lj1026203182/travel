@@ -6,7 +6,7 @@
         <div class="area-title">您的位置</div>
         <div class="area-location">
           <div class="btn-wrapper">
-            <div class="btn">北京</div>
+            <div class="btn">{{this.$store.state.city}}</div>
           </div>
         </div>
       </div>
@@ -14,7 +14,12 @@
       <div class="hot-city">
         <div class="hot-titl">热门城市</div>
         <div class="area-location">
-          <div class="btn-wrapper" v-for="(item, index) in hotcities" :key="item.id">
+          <div
+            class="btn-wrapper"
+            v-for="(item, index) in hotcities"
+            :key="item.id"
+            @click="handleClickCity(item.name)"
+          >
             <div class="btn">{{item.name}}</div>
           </div>
         </div>
@@ -23,7 +28,12 @@
       <div v-for="(item, key) in cities" :key="key" :ref="key">
         <div class="chose">{{key}}</div>
         <div class="tiem-list">
-          <div class="item" v-for="(list, index) in item" :key="item.id">{{list.name}}</div>
+          <div
+            class="item"
+            v-for="(list, index) in item"
+            :key="item.id"
+            @click="handleClickCity(list.name)"
+          >{{list.name}}</div>
         </div>
       </div>
     </div>
@@ -34,10 +44,6 @@
 import Bscroll from 'better-scroll';
 export default {
   name: 'CityList',
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
-    // console.log(this.scroll)
-  },
   props: {
     hotcities: Array,
     cities: Object,
@@ -46,6 +52,12 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    handleClickCity (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')          //路由的push跳转
     }
   },
   watch: {
@@ -59,8 +71,10 @@ export default {
 
     }
   },
-  methods: {
-
+  mounted () {
+    //better-scroll会阻止touch事件发生,添加{click:ture}
+    this.scroll = new Bscroll(this.$refs.wrapper, { mouseWheel: true, click: true, tap: true })
+    // console.log(this.scroll)
   },
 }
 </script>

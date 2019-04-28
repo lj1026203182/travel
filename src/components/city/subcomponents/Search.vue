@@ -4,12 +4,13 @@
       <input type="text" placeholder="输入城市名或拼音" v-model="keyword">
     </div>
 
-    <div class="search-content" ref="scroll" v-if="keyword">
+    <div class="search-content" ref="scroll" v-show="keyword">
       <ul>
         <li
           v-for="(item, index) in list"
           :key="item.id"
           class="border-bottom search-item"
+          @click="handleClickCity(item.name)"
         >{{item.name}}</li>
         <li class="border-bottom search-item" v-if="!this.list.length">没得这个东西</li>
       </ul>
@@ -32,7 +33,10 @@ export default {
     cities: Object
   },
   methods: {
-
+    handleClickCity (city) {
+      this.$store.dispatch('changeCity', city);
+      this.$router.push('/')
+    }
   },
   watch: {
     keyword () {
@@ -62,7 +66,7 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.scroll)
+    this.scroll = new Bscroll(this.$refs.scroll, { mouseWheel: true, click: true, tap: true })
   },
 }
 </script>
@@ -95,13 +99,15 @@ export default {
   left: 0;
   right: 0;
   background-color: #eee;
-  z-index: 22;
+  z-index: 1;
   overflow: hidden;
 
   .search-item {
     line-height: 0.5rem;
     background-color: #fff;
     padding-left: 0.2rem;
+    font-weight: 600;
+    font-size: 0.26rem;
   }
 }
 </style>

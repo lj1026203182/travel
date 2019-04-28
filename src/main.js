@@ -17,6 +17,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import store from './store/index'
 
 Vue.use(MintUI)
 // 使用fastClick
@@ -34,5 +35,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
