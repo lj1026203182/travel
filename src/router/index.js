@@ -7,6 +7,9 @@ import Home from '../components/home/Home.vue'
 // 城市路由
 import City from '../components/city/City.vue'
 
+// 主页动态路由
+import Detail from '../components/detail/Detail.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -20,6 +23,11 @@ export default new Router({
       path: '/city',
       name: 'City',
       component: City
+    },
+    {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })
