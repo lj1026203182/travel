@@ -14,47 +14,17 @@
       <div class="hot-city">
         <div class="hot-titl">热门城市</div>
         <div class="area-location">
-          <div class="btn-wrapper">
-            <div class="btn">北京</div>
-          </div>
-          <div class="btn-wrapper">
-            <div class="btn">北京</div>
-          </div>
-          <div class="btn-wrapper">
-            <div class="btn">北京</div>
-          </div>
-          <div class="btn-wrapper">
-            <div class="btn">北京</div>
-          </div>
-          <div class="btn-wrapper">
-            <div class="btn">北京</div>
+          <div class="btn-wrapper" v-for="(item, index) in hotcities" :key="item.id">
+            <div class="btn">{{item.name}}</div>
           </div>
         </div>
       </div>
       <!-- 选择部分 -->
-      <div class="chose">A</div>
-      <div class="tiem-list">
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-      </div>
-      <div class="chose">B</div>
-      <div class="tiem-list">
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-      </div>
-      <div class="chose">C</div>
-      <div class="tiem-list">
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
-        <div class="item">阿拉尔</div>
+      <div v-for="(item, key) in cities" :key="key" :ref="key">
+        <div class="chose">{{key}}</div>
+        <div class="tiem-list">
+          <div class="item" v-for="(list, index) in item" :key="item.id">{{list.name}}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -66,12 +36,26 @@ export default {
   name: 'CityList',
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
-
     // console.log(this.scroll)
-
+  },
+  props: {
+    hotcities: Array,
+    cities: Object,
+    letter: String
   },
   data () {
     return {
+
+    }
+  },
+  watch: {
+    letter () {
+      // console.log(this.letter)
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        // console.log(element)
+        this.scroll.scrollToElement(element)
+      }
 
     }
   },
