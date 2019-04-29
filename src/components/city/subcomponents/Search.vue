@@ -50,7 +50,7 @@ export default {
         const result = []
         //先遍历cities 先检查keyword是否存在于cities之中  indexOf
         for (let i in this.cities) {
-          this.cities[i].forEach(element => {
+          this.cities[i].forEach(element => {   //element就是this.cities[i]
             if (element.spell.indexOf(this.keyword) > -1 || element.name.indexOf(this.keyword) > -1) {
               result.push(element)
             }

@@ -29,5 +29,9 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  // 滚动行为,每次进入新的路由都会在顶部(0,0)的位置出现
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
